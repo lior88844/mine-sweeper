@@ -1,0 +1,76 @@
+body {
+  text-align: center;
+  background: url("/img/background.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.emoji {
+  font-size: 40px;
+  cursor: pointer;
+  background-color: transparent;
+  border-width: 0px;
+
+  box-shadow: none;
+  border-color: transparent;
+}
+h1 {
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 50px;
+  text-shadow: black;
+}
+.level {
+  width: 100px;
+  height: fit-content;
+  margin: 10px 10px;
+  background-color: #be8c1e;
+  color: white;
+  font-size: medium;
+  cursor: pointer;
+  padding: 5px;
+}
+.board-container {
+  margin-top: 40px;
+  margin: auto;
+}
+table {
+  box-sizing: border-box;
+  margin-top: 40px;
+  margin: auto;
+  height: 500px;
+  width: 500px;
+  font-size: 150%;
+}
+table,
+td {
+  border: 1px solid white;
+  border-collapse: collapse;
+  color: white;
+}
+.cell {
+  width: 30px;
+  height: 30px;
+}
+.hidden:hover {
+  cursor: pointer;
+}
+.mine {
+  background-color: red;
+}
+.shown {
+  background-color: #808813;
+  transition: 0.5s;
+}
+
+.hidden {
+  background-color: #6b7211;
+}
+.footer {
+  background-color: #808813;
+  height: 5px;
+  width: 100%;
+  padding: 50px 0;
+  margin-top: 20%;
+  display: block;
+  color: white;
+}
