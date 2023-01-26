@@ -1,76 +1,132 @@
+body,
+html {
+  height: 100%;
+}
 body {
   text-align: center;
-  background: url("/img/background.jpeg");
+  background: url("../img/background.jpeg");
   background-repeat: no-repeat;
+  background-position: center;
   background-size: cover;
+  height: 100%;
+}
+h1 {
+  color: white;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  -webkit-text-stroke: 2px black;
+  font-size: 50px;
+  text-shadow: black;
 }
 .emoji {
   font-size: 40px;
   cursor: pointer;
   background-color: transparent;
   border-width: 0px;
-
+  margin-bottom: 10px;
   box-shadow: none;
   border-color: transparent;
+  display: block;
+  margin: auto;
 }
-h1 {
+.lives {
+  margin: auto;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+  font-size: 10px;
+  display: inline-block;
+}
+.hints-container {
+  display: inline-block;
+  margin-left: 10px;
+}
+.hints {
+  display: inline-block;
+  font-size: 12px;
+  margin: 0px 0.5px 10px 0.5px;
+}
+.hints:hover {
+  cursor: pointer;
+}
+.timer {
   color: white;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 50px;
-  text-shadow: black;
+  font-size: 15px;
+  display: inline-block;
+  margin-left: 10px;
+}
+.safe-click {
+  background-color: #56210d;
+  color: white;
+  cursor: pointer;
+  height: 20px;
+  width: fit-content;
+  display: block;
+  margin: auto;
+  margin-bottom: 10px;
+}
+.mega-hint {
+  background-color: #af6f09;
+  color: white;
+  cursor: pointer;
+  height: 20px;
+  width: fit-content;
+  display: block;
+  margin: auto;
+  margin-bottom: 10px;
+}
+.manual-mode {
+  background-color: #3a4862;
+  color: white;
+  cursor: pointer;
+  height: fit-content;
+  font-size: 15px;
+  width: fit-content;
+  display: inline-block;
+  margin: auto;
+  margin-top: 10px;
 }
 .level {
-  width: 100px;
+  width: 80px;
   height: fit-content;
   margin: 10px 10px;
   background-color: #be8c1e;
-  color: white;
-  font-size: medium;
+  color: black;
+  font-size: 15px;
   cursor: pointer;
   padding: 5px;
 }
-.board-container {
-  margin-top: 40px;
-  margin: auto;
+table,
+th,
+td {
+  border-collapse: collapse;
 }
 table {
-  box-sizing: border-box;
-  margin-top: 40px;
+  table-layout: fixed;
   margin: auto;
-  height: 500px;
-  width: 500px;
-  font-size: 150%;
 }
-table,
 td {
-  border: 1px solid white;
-  border-collapse: collapse;
   color: white;
 }
-.cell {
-  width: 30px;
+table td {
+  transition: 0.5s;
+  border: 1px solid white;
+  table-layout: fixed;
+  background-origin: border-box;
   height: 30px;
-}
-.hidden:hover {
+  width: 30px;
+  background-color: #6b7211;
   cursor: pointer;
 }
-.mine {
-  background-color: red;
-}
-.shown {
+table td:hover {
   background-color: #808813;
-  transition: 0.5s;
-}
-
-.hidden {
-  background-color: #6b7211;
 }
 .footer {
   background-color: #808813;
-  height: 5px;
+  padding-top: 30px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
   width: 100%;
-  padding: 50px 0;
-  margin-top: 20%;
-  display: block;
+  height: 5%;
   color: white;
+  text-align: center;
 }

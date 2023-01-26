@@ -1,6 +1,7 @@
 'use strict'
 
 function createMines() {
+    if (gGame.isManual) return
     for (var i = 0; i < gLevel.mines; i++) createMine()
 }
 function createMine() {

@@ -9,18 +9,31 @@
   </head>
   <body onload="onInit()">
     <h1>Mine Sweeper</h1>
-    <button class="emoji" onclick="onInit()"></button>
-    <div class="levels">
+    <div class="game-info">
+      <button class="emoji" onclick="onInit()"></button>
+      <div class="lives"></div>
+      <div class="hints-container"></div>
+      <div class="timer"></div>
+      <button class="safe-click" onclick="markSafeCell()"></button>
+      <div class="board-container"></div>
+      <button class="manual-mode" onclick="manualMode()">
+        Manually Create Mode
+      </button>
+      <div class="levels"></div>
       <button onclick="changeLevel(4,2)" class="level beginner">
         Beginner
       </button>
       <button onclick="changeLevel(8,14)" class="level medium">Medium</button>
       <button onclick="changeLevel(12,32)" class="level expert">Expert</button>
-    </div>
-    <div class="board-container"></div>
+    </div class="score-board"></div>
     <div class="footer">Lior Doron</div>
     <script src="js/util.js"></script>
     <script src="js/mines.js"></script>
+    <script src="js/lives.js"></script>
+    <script src="js/hints.js"></script>
+    <script src="js/timer.js"></script>
+    <script src="js/safe-click.js"></script>
+    <script src="js/manual-mode.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>
