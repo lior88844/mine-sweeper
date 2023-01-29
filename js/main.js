@@ -15,8 +15,6 @@ var gHints
 var gManualMode
 
 
-
-
 function onInit() {
     gGame = {
         isOn: true,
@@ -31,7 +29,11 @@ function onInit() {
     gHints = {
         hintsCount: 0,
         isHint: false,
-        clickedHint: 0
+        clickedHint: 0,
+        isMegaHint: false,
+        firstMegaLocation: null,
+        secondMegaLocation: null
+
     }
     gManualMode = {
         isManual: false,
@@ -45,6 +47,7 @@ function onInit() {
     createSafeClick(3)
     changeEmoji('startGame')
     startTimer()
+    renderScoreBoard()
 }
 function changeLevel(size, mines) {
     gLevel = getLevel(size, mines)
@@ -95,6 +98,10 @@ function onCellClicked(cellI, cellJ) {
     }
     if (gHints.isHint) {
         revealCells(cellI, cellJ)
+        return
+    }
+    if (gHints.isMegaHint) {
+        selectArea()
         return
     }
     if (gBoard[cellI][cellJ].isMine) removeLife()
@@ -179,7 +186,8 @@ function checkGameOver() {
 }
 function winGame() {
     gGame.isOn = false
-    // playWinSound()
+    playWinSound()
+    storeScore()
     stopTimer()
     changeEmoji('won')
 }
@@ -189,7 +197,7 @@ function playWinSound() {
 }
 function loseGame() {
     gGame.isOn = false
-    // playLoseSound()
+    playLoseSound()
     revealMines()
     stopTimer()
     var elEmoji = document.querySelector('.emoji')
@@ -221,4 +229,8 @@ function changeEmoji(gameState) {
     }
     elEmoji.innerText = innerEmojiText;
 }
-function megaHintMode() { }
+function darkMode() {
+    var elBody = document.querySelector('body')
+    elBody.classList.toggle('darkMode')
+
+}

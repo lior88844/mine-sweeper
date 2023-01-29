@@ -62,3 +62,22 @@ function removeHint() {
     var elHint = document.querySelector(`.hint${gHints.clickedHint}`)
     elHint.style.visibility = "hidden"
 }
+function megaHintMode() {
+    // alert('hi')
+    gHints.isMegaHint = true;
+    var elTable = document.querySelector('.board-container')
+    elTable.classList.toggle = 'mega-hint-mode'
+
+}
+function selectArea(cellI, cellJ) {
+    if (!gHints.isMegaHint) return
+    if (gHints.firstMegaLocation && gHints.secondMegaLocation) {
+        revealcellsArea()
+        gHints.isMegaHint = false
+
+    }
+
+}
+function revealcellsArea() {
+
+}
