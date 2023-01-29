@@ -16,5 +16,6 @@ function renderTimer() {
     elTimer.innerText = `⏱ ${gGame.secsPassed}`
 }
 function stopTimer() {
+
     clearInterval(gTimerInterval)
 }

@@ -14,18 +14,25 @@
       <div class="lives"></div>
       <div class="hints-container"></div>
       <div class="timer"></div>
+      <button class="display-scores" onclick="displayScoreBoard()">🏆</button>
+      <button class="dark-mode" onclick="darkMode()">🥷🏿</button>
       <button class="safe-click" onclick="markSafeCell()"></button>
+      <button class = "mega-hint" onclick="megaHintMode()">Mega Hint</button>
       <div class="board-container"></div>
       <button class="manual-mode" onclick="manualMode()">
         Manually Create Mode
       </button>
+      <div class = "mines-to-place"></div>
       <div class="levels"></div>
       <button onclick="changeLevel(4,2)" class="level beginner">
         Beginner
       </button>
       <button onclick="changeLevel(8,14)" class="level medium">Medium</button>
       <button onclick="changeLevel(12,32)" class="level expert">Expert</button>
-    </div class="score-board"></div>
+    <div class="score-board">
+      <h2></h2>
+     <p></p>
+    </div>
     <div class="footer">Lior Doron</div>
     <script src="js/util.js"></script>
     <script src="js/mines.js"></script>
@@ -34,6 +41,7 @@
     <script src="js/timer.js"></script>
     <script src="js/safe-click.js"></script>
     <script src="js/manual-mode.js"></script>
+    <script src="js/scoreBoard.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>

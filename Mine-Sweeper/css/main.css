@@ -2,6 +2,7 @@ body,
 html {
   height: 100%;
 }
+
 body {
   text-align: center;
   background: url("../img/background.jpeg");
@@ -10,6 +11,7 @@ body {
   background-size: cover;
   height: 100%;
 }
+
 h1 {
   color: white;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
@@ -22,12 +24,12 @@ h1 {
   cursor: pointer;
   background-color: transparent;
   border-width: 0px;
-  margin-bottom: 10px;
   box-shadow: none;
   border-color: transparent;
   display: block;
-  margin: auto;
+  margin: 0px auto;
 }
+
 .lives {
   margin: auto;
   margin-bottom: 20px;
@@ -52,6 +54,24 @@ h1 {
   font-size: 15px;
   display: inline-block;
   margin-left: 10px;
+}
+.display-scores {
+  color: white;
+  font-size: 15px;
+  display: inline-block;
+  margin-left: 10px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.dark-mode {
+  color: white;
+  font-size: 15px;
+  display: inline-block;
+  margin-left: 10px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }
 .safe-click {
   background-color: #56210d;
@@ -84,6 +104,10 @@ h1 {
   margin: auto;
   margin-top: 10px;
 }
+.mines-to-place {
+  color: white;
+  display: inline;
+}
 .level {
   width: 80px;
   height: fit-content;
@@ -104,6 +128,7 @@ table {
   margin: auto;
 }
 td {
+  background-color: #6b7211;
   color: white;
 }
 table td {
@@ -113,11 +138,31 @@ table td {
   background-origin: border-box;
   height: 30px;
   width: 30px;
-  background-color: #6b7211;
+
   cursor: pointer;
 }
 table td:hover {
   background-color: #808813;
+}
+.score-board {
+  width: fit-content;
+  height: fit-content;
+  background-color: #281909;
+  margin: 10px auto;
+  border: 1px white double;
+  /* display: none; */
+}
+.score-board h2 {
+  color: white;
+  font-size: 11px;
+  margin-bottom: 2px;
+  padding: 7px;
+}
+.score-board p {
+  margin-top: 1px;
+  color: white;
+  padding-bottom: 7px;
+  font-size: 10px;
 }
 .footer {
   background-color: #808813;
@@ -129,4 +174,19 @@ table td:hover {
   height: 5%;
   color: white;
   text-align: center;
+}
+.mega-hint-mode {
+  cursor: crosshair;
+}
+.darkMode {
+  text-align: center;
+  background: url("../img/dark-background.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+  filter: grayscale(100%);
+}
+.dark-mode table td {
+  background-color: black;
 }

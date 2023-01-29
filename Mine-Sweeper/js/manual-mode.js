@@ -12,22 +12,38 @@ function manualMode() {
             renderCell(i, j, EMPTY)
         }
     }
+    renderMinesToPlace()
 }
 function placeMines(elCell, cellI, cellJ) {
     if (!gManualMode.isCreate) return
-    if (gBoard[cellI][cellJ].isMine) return
-    gManualMode.bombsPlacedCount++
-    if (gManualMode.bombsPlacedCount > gLevel.mines) return
-    gBoard[cellI][cellJ].isMine = true
-    elCell.innerText = '💣'
-    if (gManualMode.bombsPlacedCount === gLevel.mines) {
-        gManualMode.isCreate = false
-        gManualMode.bombsPlacedCount = 0
-        renderManualBoard()
+    if (gManualMode.bombsPlacedCount >= gLevel.mines) return
+    if (gBoard[cellI][cellJ].isMine) {
+        elCell.innerText = ''
+        gManualMode.bombsPlacedCount--
+        gBoard[cellI][cellJ].isMine = false
+        renderMinesToPlace()
+        return
     }
+    //place a mine
+    elCell.innerText = '💣'
+    gManualMode.bombsPlacedCount++
+    gBoard[cellI][cellJ].isMine = true
+    renderMinesToPlace()
+    if (gManualMode.bombsPlacedCount === gLevel.mines) setTimeout(renderManualBoard, 1000)
 }
 function renderManualBoard() {
+    gManualMode.bombsPlacedCount = 0
     renderBoard(gBoard, ".board-container")
     changeEmoji('startGame')
     startTimer()
+    gManualMode.isCreate = false
+    removeMinesToPlace()
+}
+function renderMinesToPlace() {
+    elMinesToPlace = document.querySelector('.mines-to-place')
+    elMinesToPlace.innerText = `💣 ${gLevel.mines - gManualMode.bombsPlacedCount}`
+}
+function removeMinesToPlace() {
+    elMinesToPlace = document.querySelector('.mines-to-place')
+    elMinesToPlace.innerText = ``
 }
